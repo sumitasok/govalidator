@@ -16,8 +16,12 @@ The Error list can be used independent of the `Validate`. `ErrorList` itself has
 
 Parameters:
 
-* The First Parameter is alwways the :key to be used to log errors against
-* Errors are a list of error objects `[]error`
+* The First Parameter is always the :key to be used to log errors against
+
+
+Output:
+
+* Errors are a list of error objects `[]error`, and iss appended to the Validate object.
 
 ####Sample
 
