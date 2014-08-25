@@ -16,33 +16,6 @@ func TestStruct(t *testing.T) {
 	assert.False(maxLen)
 }
 
-func TestCountPresence(t *testing.T) {
-	assert := assert.New(t)
-
-	validate := Validate{}
-	assert.NotNil(validate)
-
-	element := 1
-	list := []int{1, 2, 3}
-	actual := validate.CountPresence("key", element, list)
-	assert.Equal(true, actual)
-
-	validate = Validate{}
-	assert.NotNil(validate)
-
-	element_str := "sumit"
-	list_str := []string{"sumit", "tiger"}
-	actual = validate.CountPresence("key", element_str, list_str)
-	assert.Equal(true, actual)
-
-	// var element_interface interface{} = "sumit"
-	list_interface := []interface{}{"sumit", 7}
-	actual = validate.CountPresence("key", "sumit", list_interface)
-	assert.Equal(true, actual)
-	assert.Equal(false, validate.CountPresence("key", 100, list_interface))
-
-}
-
 func TestMaxLengthOfString(t *testing.T) {
 	assert := assert.New(t)
 

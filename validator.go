@@ -3,7 +3,6 @@ package validator
 import (
 	"errors"
 	"fmt"
-	"reflect"
 	"regexp"
 )
 
@@ -47,25 +46,4 @@ func (v *Validate) MinLengthOfString(key string, min int, value string) bool {
 		return false
 	}
 	return true
-}
-
-func (v *Validate) CountPresence(key string, element interface{}, list ...interface{}) bool {
-	etype := reflect.TypeOf(element)
-	evalue := reflect.ValueOf(element)
-	if etype.Name() == "string" {
-		fmt.Println("1", evalue)
-	}
-	for i, e := range list {
-		fmt.Println("2", reflect.TypeOf(e))
-		if reflect.TypeOf(e).Name() == "string" {
-			fmt.Println("Caughtya!")
-		}
-		fmt.Println("3", reflect.ValueOf(e))
-		fmt.Println("4", list[i])
-		if reflect.TypeOf(list[i]).Name() == "string" {
-			fmt.Println("Caughtya!")
-		}
-
-	}
-	return false
 }
